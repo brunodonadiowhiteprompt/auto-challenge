@@ -75,3 +75,7 @@ In order to integrate the scripts involved in this challenge into a CI/CD enviro
 Also, if needed, jobs might be programmed to run on a schedule.  
 For reporting, I would organize the execution reports generated for each build, and report any incidence to the development team in case of a failure, including the test case that was executed, the environment details, the desired instructions in order to reproduce the failure, and any generated assets from the test session.  
 There are several tools that can be used in order to integrate the documented test cases with the test runs and the execution results, like **TestRail** or **CucumberStudio**.
+
+## Executions Results
+
+You can find both reports and logs generated from the execution of both the projects in the _execution-results_ folder.
