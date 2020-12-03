@@ -8,7 +8,7 @@ public class TestHelper {
    * @return String the environment
    */
   public static String getEnvironment() {
-    return System.getProperty("env", "dev");
+    return System.getProperty("env", "test");
   }
 
   /**
