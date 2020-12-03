@@ -1,0 +1,51 @@
+[INFO ] 2020-12-03 17:14:39.668 [main] [DriverManager] - Initializing webdriver instance
+[INFO ] 2020-12-03 17:15:40.620 [main] [LoginTest] - TEST. Standard User Login
+[INFO ] 2020-12-03 17:15:40.646 [main] [LoginTest] - STEP. The user is at Login page
+[INFO ] 2020-12-03 17:15:41.062 [main] [BasePage] - Navigating to landing page
+[INFO ] 2020-12-03 17:15:52.237 [main] [LoginTest] - STEP. The user fills the Username field
+[INFO ] 2020-12-03 17:15:52.238 [main] [LoginPage] - Filling Username field with [standard_user]
+[INFO ] 2020-12-03 17:15:53.750 [main] [LoginTest] - STEP. The user fills the Password field
+[INFO ] 2020-12-03 17:15:53.751 [main] [LoginPage] - Filling Password field with [secret_sauce]
+[INFO ] 2020-12-03 17:15:53.903 [main] [LoginTest] - STEP. The user clicks on Continue button
+[INFO ] 2020-12-03 17:15:53.903 [main] [LoginPage] - Clicking on Login button
+[INFO ] 2020-12-03 17:15:56.068 [main] [LoginTest] - VERIFY. The user should be authenticated
+[INFO ] 2020-12-03 17:15:56.103 [main] [ProductsPage] - Checking if Header Container is displayed
+[INFO ] 2020-12-03 17:15:56.282 [main] [DriverManager] - Stopping webdriver instance
+[INFO ] 2020-12-03 17:15:56.640 [main] [DriverManager] - Initializing webdriver instance
+[INFO ] 2020-12-03 17:16:15.394 [main] [PurchaseTest] - TEST. Purchase all the T-Shirts
+[INFO ] 2020-12-03 17:16:15.437 [main] [PurchaseTest] - STEP. The user is at Login page
+[INFO ] 2020-12-03 17:16:15.437 [main] [BasePage] - Navigating to landing page
+[INFO ] 2020-12-03 17:16:16.205 [main] [PurchaseTest] - STEP. The user performs login as Standard User
+[INFO ] 2020-12-03 17:16:16.410 [main] [LoginHelper] - STEP. The user fills the Username field
+[INFO ] 2020-12-03 17:16:16.410 [main] [LoginPage] - Filling Username field with [standard_user]
+[INFO ] 2020-12-03 17:16:33.360 [main] [LoginHelper] - STEP. The user fills the Password field
+[INFO ] 2020-12-03 17:16:33.415 [main] [LoginPage] - Filling Password field with [secret_sauce]
+[INFO ] 2020-12-03 17:16:34.143 [main] [LoginHelper] - STEP. The user clicks on Login button
+[INFO ] 2020-12-03 17:16:34.143 [main] [LoginPage] - Clicking on Login button
+[INFO ] 2020-12-03 17:16:37.011 [main] [PurchaseTest] - STEP. The user adds all the products to the shopping cart
+[INFO ] 2020-12-03 17:16:37.219 [main] [ProductsPage] - Adding product [Sauce Labs Backpack] to shopping cart
+[INFO ] 2020-12-03 17:16:37.976 [main] [ProductsPage] - Adding product [Sauce Labs Bike Light] to shopping cart
+[INFO ] 2020-12-03 17:16:38.043 [main] [ProductsPage] - Adding product [Sauce Labs Bolt T-Shirt] to shopping cart
+[INFO ] 2020-12-03 17:16:38.110 [main] [ProductsPage] - Adding product [Sauce Labs Fleece Jacket] to shopping cart
+[INFO ] 2020-12-03 17:16:38.213 [main] [ProductsPage] - Adding product [Sauce Labs Onesie] to shopping cart
+[INFO ] 2020-12-03 17:16:38.279 [main] [ProductsPage] - Adding product [Test.allTheThings() T-Shirt (Red)] to shopping cart
+[INFO ] 2020-12-03 17:16:38.509 [main] [PurchaseTest] - VERIFY. Shopping Cart Badge should count the total number of products
+[INFO ] 2020-12-03 17:16:38.530 [main] [PurchaseTest] - STEP. The user clicks on Shopping Cart link
+[INFO ] 2020-12-03 17:16:38.530 [main] [ProductsPage] - Clicking on Shopping Cart link
+[INFO ] 2020-12-03 17:16:39.058 [main] [PurchaseTest] - VERIFY. Shopping Cart items should count the total number of products added
+[INFO ] 2020-12-03 17:16:39.076 [main] [PurchaseTest] - STEP. The user clicks on Checkout button
+[INFO ] 2020-12-03 17:16:39.076 [main] [ShoppingCartPage] - Clicking on Checkout button
+[INFO ] 2020-12-03 17:16:39.500 [main] [PurchaseTest] - STEP. The user fills the First Name field
+[INFO ] 2020-12-03 17:16:39.501 [main] [CheckoutYourInformationPage] - Filling First Name field with [John]
+[INFO ] 2020-12-03 17:16:39.661 [main] [PurchaseTest] - STEP. The user fills the Last Name field
+[INFO ] 2020-12-03 17:16:39.661 [main] [CheckoutYourInformationPage] - Filling Last Name field with [Bryant]
+[INFO ] 2020-12-03 17:16:39.749 [main] [PurchaseTest] - STEP. The user fills the Postal Code field
+[INFO ] 2020-12-03 17:16:39.749 [main] [CheckoutYourInformationPage] - Filling Postal Code field with [10016]
+[INFO ] 2020-12-03 17:16:39.812 [main] [PurchaseTest] - STEP. The user clicks on Continue button
+[INFO ] 2020-12-03 17:16:39.813 [main] [CheckoutYourInformationPage] - Clicking on Continue button
+[INFO ] 2020-12-03 17:16:40.211 [main] [PurchaseTest] - VERIFY. Order subtotal value should match the sum of the added products price
+[INFO ] 2020-12-03 17:16:40.234 [main] [PurchaseTest] - STEP. The user clicks on Finish button
+[INFO ] 2020-12-03 17:16:40.234 [main] [CheckoutOverviewPage] - Clicking on Finish button
+[INFO ] 2020-12-03 17:16:41.889 [main] [PurchaseTest] - VERIFY. Order Confirmation message is displayed
+[INFO ] 2020-12-03 17:16:41.889 [main] [CheckoutCompletePage] - Checking if Order Confirmation Container is displayed
+[INFO ] 2020-12-03 17:16:41.918 [main] [DriverManager] - Stopping webdriver instance
