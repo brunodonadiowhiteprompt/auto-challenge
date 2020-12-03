@@ -78,4 +78,4 @@ There are several tools that can be used in order to integrate the documented te
 
 ## Executions Results
 
-You can find both reports and logs generated from the execution of the both projects in the _execution-results_ folder.
+You can find both reports and logs generated from the execution of both the projects in the _execution-results_ folder.
