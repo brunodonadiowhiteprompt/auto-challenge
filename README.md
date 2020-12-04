@@ -32,7 +32,7 @@ Then the user should be authenticated
 ```
 Given the user is at Login page
 and the user performs login as Standard User
-When the user adds all the products to the shopping cart
+When the user adds all the T-Shirts to the shopping cart
 and the user clicks on Shopping Cart link
 and the user clicks on Checkout button
 and the user fills the First Name field

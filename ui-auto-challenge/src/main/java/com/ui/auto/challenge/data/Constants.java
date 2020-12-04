@@ -14,6 +14,9 @@ public class Constants {
     public static final String LOGIN_STANDARD_USER_USERNAME = "standard_user";
     public static final String LOGIN_STANDARD_USER_PASSWORD = "secret_sauce";
 
+    /** Products */
+    public static final String PRODUCTS_T_SHIRT_KEYWORD = "T-Shirt";
+
     /** Checkout Your Information */
     public static final String CHECKOUT_YOUR_INFORMATION_FIRST_NAME = "John";
     public static final String CHECKOUT_YOUR_INFORMATION_LAST_NAME = "Bryant";

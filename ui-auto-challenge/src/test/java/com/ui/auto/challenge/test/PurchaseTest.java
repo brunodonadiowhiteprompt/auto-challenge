@@ -24,29 +24,29 @@ public class PurchaseTest extends BaseTest {
             Constants.TestData.LOGIN_STANDARD_USER_USERNAME,
             Constants.TestData.LOGIN_STANDARD_USER_PASSWORD);
 
-    logger.info("STEP. The user adds all the products to the shopping cart");
-    productsPage.addAllProductsToCart();
+    logger.info("STEP. The user adds all the T-Shirts to the shopping cart");
+    productsPage.addAllTShirtsToCart();
 
-    // Store total count of products for further validation
-    Integer totalProductsCount = productsPage.getTotalProductsCount();
+    // Store total count of T-Shirts for further validation
+    Integer totalTShirtsCount = productsPage.getTotalTShirtsCount();
 
-    // Store total price of products for further validation
-    Double totalProductsPrice = productsPage.getTotalProductsPrice();
+    // Store total price of T-Shirts for further validation
+    Double totalTShirtsPrice = productsPage.getTotalTShirtsPrice();
 
-    logger.info("VERIFY. Shopping Cart Badge should count the total number of products");
+    logger.info("VERIFY. Shopping Cart Badge should count the total number of T-Shirts");
     Assert.assertEquals(
         productsPage.getShoppingCartBadgeValue(),
-        totalProductsCount,
-        "Shopping Cart Badge should count the total number of products");
+        totalTShirtsCount,
+        "Shopping Cart Badge should count the total number of T-Shirts");
 
     logger.info("STEP. The user clicks on Shopping Cart link");
     ShoppingCartPage shoppingCartPage = productsPage.clickShoppingCartLink();
 
-    logger.info("VERIFY. Shopping Cart items should count the total number of products added");
+    logger.info("VERIFY. Shopping Cart items should count the total number of T-shirts added");
     Assert.assertEquals(
         shoppingCartPage.getTotalCartItemsCount(),
-        totalProductsCount,
-        "Shopping Cart items should count the total number of products added");
+        totalTShirtsCount,
+        "Shopping Cart items should count the total number of T-Shirts added");
 
     logger.info("STEP. The user clicks on Checkout button");
     CheckoutYourInformationPage checkoutYourInformationPage =
@@ -67,11 +67,11 @@ public class PurchaseTest extends BaseTest {
     logger.info("STEP. The user clicks on Continue button");
     CheckoutOverviewPage checkoutOverviewPage = checkoutYourInformationPage.clickContinueButton();
 
-    logger.info("VERIFY. Order subtotal value should match the sum of the added products price");
+    logger.info("VERIFY. Order subtotal value should match the sum of the added T-Shirts price");
     Assert.assertEquals(
         checkoutOverviewPage.getOrderSubtotal(),
-        totalProductsPrice,
-        "Order subtotal value should match the sum of the added products price");
+        totalTShirtsPrice,
+        "Order subtotal value should match the sum of the added T-Shirts price");
 
     logger.info("STEP. The user clicks on Finish button");
     CheckoutCompletePage checkoutCompletePage = checkoutOverviewPage.clickFinishButton();

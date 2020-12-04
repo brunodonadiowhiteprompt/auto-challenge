@@ -1,8 +1,10 @@
 package com.ui.auto.challenge.views;
 
+import com.ui.auto.challenge.data.Constants;
 import com.ui.auto.challenge.helpers.PurchaseHelper;
 import com.ui.auto.challenge.helpers.WebHelper;
 import com.ui.auto.challenge.utils.ComponentFactory;
+import com.ui.auto.challenge.utils.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +19,9 @@ public class ProductsPage extends BasePage {
 
   @FindBy(css = "#inventory_container .inventory_list .inventory_item")
   private List<WebElement> productsCards;
+
+  private String productCardPath =
+      "//div[@class='inventory_item_name'][contains(text(), '%s')]/ancestor::div[@class='inventory_item']";
 
   private By productNameLocator = By.cssSelector("div.inventory_item_name");
 
@@ -41,41 +46,52 @@ public class ProductsPage extends BasePage {
   }
 
   /**
-   * Get total products count
+   * Get products by name
    *
-   * @return Integer
+   * @param name
+   * @return List<WebElement>
    */
-  public Integer getTotalProductsCount() {
-    return productsCards.size();
+  public List<WebElement> getProductsByName(String name) {
+    return DriverManager.getDriver().findElements(By.xpath(String.format(productCardPath, name)));
   }
 
   /**
-   * Get total products price
+   * Get total T-Shirts count
+   *
+   * @return Integer
+   */
+  public Integer getTotalTShirtsCount() {
+    return getProductsByName(Constants.TestData.PRODUCTS_T_SHIRT_KEYWORD).size();
+  }
+
+  /**
+   * Get total T-Shirts price
    *
    * @return Double
    */
-  public Double getTotalProductsPrice() {
-    List<Double> totalProductsPrice = new ArrayList<Double>();
-    productsCards.stream()
+  public Double getTotalTShirtsPrice() {
+    List<Double> TShirtsPrices = new ArrayList<Double>();
+    getProductsByName("T-Shirt").stream()
         .forEach(
-            productCard ->
-                totalProductsPrice.add(
+            product ->
+                TShirtsPrices.add(
                     PurchaseHelper.parseProductPrice(
-                        productCard.findElement(productPriceLocator).getText())));
+                        product.findElement(productPriceLocator).getText())));
 
-    return totalProductsPrice.stream().mapToDouble(f -> f.doubleValue()).sum();
+    return TShirtsPrices.stream().mapToDouble(Double::doubleValue).sum();
   }
 
-  /** Add all products to cart */
-  public void addAllProductsToCart() {
-    productsCards.forEach(
-        (productCard) -> {
-          logger.info(
-              String.format(
-                  "Adding product [%s] to shopping cart",
-                  productCard.findElement(productNameLocator).getText()));
-          productCard.findElement(productAddToCartLocator).click();
-        });
+  /** Add all T-Shirts to cart */
+  public void addAllTShirtsToCart() {
+    getProductsByName("T-Shirt")
+        .forEach(
+            (productCard) -> {
+              logger.info(
+                  String.format(
+                      "Adding product [%s] to shopping cart",
+                      productCard.findElement(productNameLocator).getText()));
+              productCard.findElement(productAddToCartLocator).click();
+            });
   }
 
   /**
